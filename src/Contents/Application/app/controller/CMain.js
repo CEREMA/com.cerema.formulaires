@@ -33,7 +33,7 @@ App.controller.define('CMain', {
 		
 	},
 	grid_dblclick: function(me,store) {
-		App.view.create("VDemandeRepro",{modal: true,status:store.data.status,ItemID:store.data.id}).show();
+		if (store.data.type=="Reprographie") App.view.create("VDemandeRepro",{modal: true,status:store.data.status,ItemID:store.data.id}).show();
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
