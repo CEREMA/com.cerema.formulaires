@@ -15,7 +15,7 @@ App.controller.define('CMain', {
 			"menu>menuitem": {
 				click: "Menu_onClick"
 			},
-            "VMain button#demande_repro": {
+            "mainform button#demande_repro": {
                 click: "demanderepro_onclick"
             }
 		});
