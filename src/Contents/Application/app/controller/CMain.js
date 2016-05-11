@@ -37,7 +37,7 @@ App.controller.define('CMain', {
     {
         var JOBS=App.get('VDemandeRepro uploadfilemanager').getFiles();
         console.log(JOBS);
-        doJobs(JOBS,0,function(){
+        this.doJobs(JOBS,0,function(){
             alert('x');
         });
         /*
