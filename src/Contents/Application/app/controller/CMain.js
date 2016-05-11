@@ -47,6 +47,7 @@ App.controller.define('CMain', {
 						Date2: new Date()
 					});
 					me.status=2;
+					App.get(me,'button#closeme').show();
 				};
 			}
 		};	
