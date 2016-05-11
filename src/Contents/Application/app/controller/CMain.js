@@ -49,7 +49,6 @@ App.controller.define('CMain', {
 	},    
     OK_onclick: function(me)
     {
-
         var JOBS=App.get('VDemandeRepro uploadfilemanager').getFiles();
         this.doJobs(JOBS,0,function(){
             App.DB.post('formulaires://demandes',{
@@ -80,14 +79,15 @@ App.controller.define('CMain', {
 	onLoad: function()
 	{
 	   Auth.login(function(){
-        console.log(Auth.User.profiles);
         if (Auth.User.profiles.indexOf('SUPERUSER')>-1) {
             App.get('mainform grid').columns[0].show();
             var store=App.store.create("formulaires://demandes");
             App.get('mainform grid').bindStore(store);
             App.get('mainform grid').store.load();
         } else {
-                        
+            var store=App.store.create("formulaires://demandes?UserID="+Auth.User.uid);
+            App.get('mainform grid').bindStore(store);
+            App.get('mainform grid').store.load();                        
         };
            
        });
