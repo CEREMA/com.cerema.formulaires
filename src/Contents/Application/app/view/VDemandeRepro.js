@@ -1,6 +1,6 @@
 App.view.define('VDemandeRepro', {
     extend: "Ext.window.Window",
-    alias: "widget.TDemandeRepro",
+    alias: "widget.VDemandeRepro",
     initComponent: function() {
         this.width = 800;
         this.height = 750;
@@ -26,7 +26,7 @@ App.view.define('VDemandeRepro', {
                 flex: 1,
                 height: 120,
                 width: "100%",
-                /*uploader: '/upload',*/
+                uploader: '/upload',
                 hidden: false
             }
         ];
