@@ -12,14 +12,16 @@ App.view.define('VDemandeRepro', {
                 xtype: "textfield",
                 itemId: "objet",
                 width: "100%",
-                padding: 5
+                padding: 5,
+                fieldLabel: "Sujet"
             },
             {
                 xtype: "htmleditor",
                 itemId: "demande",
                 height: 250,
                 width: "100%",
-                padding: 5
+                padding: 5,
+                fieldLabel: "Description du travail demandé"
             },
             {
                 xtype: "uploadfilemanager",
@@ -30,7 +32,8 @@ App.view.define('VDemandeRepro', {
                 width: "100%",
                 uploader: '/upload',
                 hidden: false,
-                padding: 5
+                padding: 5,
+                fieldLabel: "Pièce(s) jointe(s)"
             }
         ];
         this.bbar = [
