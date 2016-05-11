@@ -18,7 +18,7 @@ App.controller.define('CMain', {
             "mainform button#demande_repro": {
                 click: "demanderepro_onclick"
             },
-            "VDemandeRepro button#OK": {
+            "VDemandeRepro button#btnOK": {
                 click: "OK_onclick"
             }
 		});
@@ -28,7 +28,6 @@ App.controller.define('CMain', {
 	},
     OK_onclick: function(me)
     {
-        alert('x');
         App.DB.post('formulaires://demandes',{
             Name: Auth.User.firstname+' '+Auth.User.lastname,
             UserID: Auth.User.uid,
