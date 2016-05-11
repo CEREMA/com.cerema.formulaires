@@ -3,7 +3,7 @@ App.view.define('VDemandeRepro', {
     alias: "widget.VDemandeRepro",
     initComponent: function() {
         this.width = 800;
-        this.height = 750;
+        this.height = 550;
         this.title = "Demande reprographie";
         this.bodyCls = "white";
         this.layout="vbox";
@@ -11,13 +11,15 @@ App.view.define('VDemandeRepro', {
             {
                 xtype: "textfield",
                 itemId: "objet",
-                width: "100%"
+                width: "100%",
+                padding: 5
             },
             {
                 xtype: "htmleditor",
                 itemId: "demande",
                 height: 250,
-                width: "100%"
+                width: "100%",
+                padding: 5
             },
             {
                 xtype: "uploadfilemanager",
@@ -27,7 +29,8 @@ App.view.define('VDemandeRepro', {
                 height: 120,
                 width: "100%",
                 uploader: '/upload',
-                hidden: false
+                hidden: false,
+                padding: 5
             }
         ];
         this.bbar = [
