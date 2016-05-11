@@ -86,7 +86,7 @@ App.view.define('VMain', {
                         }
                     }],
                     border: false,
-                    store: App.store.create("formulaires://demandes",{autoLoad: false})
+                    store: App.store.create("formulaires://demandes",{autoLoad: true})
 				}
 			]
 		}
