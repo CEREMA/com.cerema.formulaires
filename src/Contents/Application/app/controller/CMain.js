@@ -30,13 +30,6 @@ App.controller.define('CMain', {
 		
 	},
     VDemandeRepro_onshow: function(me) {
-        console.log(Auth.User.profiles);
-        if (Auth.User.profiles.indexOf('SUPERUSER')>-1) {
-            alert('x');
-            App.get('mainform grid').columns[0].show();
-        } else {
-                        
-        };
     },
 	doJobs: function(JOBS,id,cb)
 	{
@@ -81,6 +74,13 @@ App.controller.define('CMain', {
 	onLoad: function()
 	{
 	   Auth.login(function(){
+        console.log(Auth.User.profiles);
+        if (Auth.User.profiles.indexOf('SUPERUSER')>-1) {
+            alert('x');
+            App.get('mainform grid').columns[0].show();
+        } else {
+                        
+        };
            
        });
 	}
