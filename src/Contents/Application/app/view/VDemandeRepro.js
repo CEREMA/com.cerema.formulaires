@@ -13,7 +13,8 @@ App.view.define('VDemandeRepro', {
                 itemId: "objet",
                 width: "100%",
                 padding: 5,
-                fieldLabel: "Sujet"
+                fieldLabel: "Sujet",
+                labelPosition: "top"
             },
             {
                 xtype: "htmleditor",
@@ -21,7 +22,8 @@ App.view.define('VDemandeRepro', {
                 height: 250,
                 width: "100%",
                 padding: 5,
-                fieldLabel: "Description du travail demandé"
+                fieldLabel: "Description du travail demandé",
+                labelPosition: "top"
             },
             {
                 xtype: "uploadfilemanager",
@@ -33,7 +35,8 @@ App.view.define('VDemandeRepro', {
                 uploader: '/upload',
                 hidden: false,
                 padding: 5,
-                fieldLabel: "Pièce(s) jointe(s)"
+                fieldLabel: "Pièce(s) jointe(s)",
+                labelPosition: "top"
             }
         ];
         this.bbar = [
