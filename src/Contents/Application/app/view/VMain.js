@@ -30,7 +30,8 @@ App.view.define('VMain', {
                 iconAlign: "top",
                 iconCls: "add",
                 hidden: false
-            },            
+            }
+            ],            
 			items: [
 				{
 					xtype: "button",
