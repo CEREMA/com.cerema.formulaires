@@ -1,9 +1,10 @@
 {
 	"profiles": [
-		"SUPERUSER"
+		"REPRO",
+		"BADGE"
 	],
 	"profile": {
-		"SUPERUSER": [
+		"REPRO": [
 			"stephane.zucatti"
 		]
 	}
