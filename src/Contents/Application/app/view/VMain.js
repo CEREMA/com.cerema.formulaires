@@ -25,7 +25,16 @@ App.view.define('VMain', {
             {
                 xtype:"button",
                 itemId: "ajouter_modification",
-                text: "Ajouter",
+                text: "Demande repro",
+                scale: "large",
+                iconAlign: "top",
+                iconCls: "add",
+                hidden: false
+            },
+            {
+                xtype:"button",
+                itemId: "ajouter_modification",
+                text: "Perte de badge",
                 scale: "large",
                 iconAlign: "top",
                 iconCls: "add",
