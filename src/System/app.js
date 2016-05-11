@@ -7,8 +7,7 @@ App = {
 		app.get('/docs/*',function(req,res) {
 			var ff=req.originalUrl.split('/docs')[1];
 			console.log('select _blob from docs where docId="'+ff+'"');
-			console.log(App.using('db'));
-			App.using('db').query('dashboard','select _blob from docs where docId="'+ff+'"',function(err,response) {
+			App.using('db').query('formulaires','select _blob from docs where docId="'+ff+'"',function(err,response) {
 				if (response.length>0) {
 					if (response[0]._blob=="") {
 						res.end('Aucun document lié.');
