@@ -32,10 +32,8 @@ App.controller.define('CMain', {
 		App.init('VMain',this.onLoad);
 		
 	},
-	grid_dblclick: function(me,a,b) {
-		console.log(me);
-		console.log(a);
-		console.log(b);
+	grid_dblclick: function(me,store) {
+		App.view.create("VDemandeRepro",{modal: true,ItemID:store.data.UserID}).show();
 	},
     VDemandeRepro_onshow: function(me) {
 		
