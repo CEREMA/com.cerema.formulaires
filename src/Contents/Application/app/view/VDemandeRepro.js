@@ -42,10 +42,22 @@ App.view.define('VDemandeRepro', {
             }
         ];
         this.bbar = [
+			{
+				text: "Fermer",
+				handler: function(me) {
+					me.up('window').close();
+				}
+			},
+			'->',
             {
                 text: "Enregistrer",
                 itemId: "btnOK"
-            }
+            },
+			{
+				text: "Clôturer",
+				itemId: "closeme",
+				hidden: true
+			}
         ];
         this.callParent(arguments);
     }
