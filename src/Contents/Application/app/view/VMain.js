@@ -76,6 +76,11 @@ App.view.define('VMain', {
                         width: 120
                     },
                     {
+                        header: "Type",
+                        dataIndex: "type",
+                        width: 120
+                    },						
+                    {
                         header: "Statut",
                         dataIndex: "status",
                         width: 120,
