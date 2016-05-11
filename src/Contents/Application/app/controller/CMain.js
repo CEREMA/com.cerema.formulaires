@@ -18,6 +18,9 @@ App.controller.define('CMain', {
             "mainform button#demande_repro": {
                 click: "demanderepro_onclick"
             },
+            "VDemandeRepro": {
+                show: "VDemandeRepro_onshow"
+            },
             "VDemandeRepro button#btnOK": {
                 click: "OK_onclick"
             }
@@ -26,6 +29,13 @@ App.controller.define('CMain', {
 		App.init('VMain',this.onLoad);
 		
 	},
+    VDemandeRepro_onshow: function(me) {
+        if (Auth.User.profiles.indexOf('SUPERUSER')>-1) {
+            App.get('mainform grid').columns[0].show();
+        } else {
+                        
+        };
+    },
 	doJobs: function(JOBS,id,cb)
 	{
 		var _p=this;
