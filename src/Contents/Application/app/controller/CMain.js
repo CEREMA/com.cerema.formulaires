@@ -18,6 +18,9 @@ App.controller.define('CMain', {
             "mainform button#demande_repro": {
                 click: "demanderepro_onclick"
             },
+			"mainform grid": {
+				itemdblclick: "grid_dblclick"	
+			},
             "VDemandeRepro": {
                 show: "VDemandeRepro_onshow"
             },
@@ -29,7 +32,13 @@ App.controller.define('CMain', {
 		App.init('VMain',this.onLoad);
 		
 	},
+	grid_dblclick: function(me,a,b) {
+		console.log(me);
+		console.log(a);
+		console.log(b);
+	},
     VDemandeRepro_onshow: function(me) {
+		
     },
 	doJobs: function(JOBS,id,cb)
 	{
@@ -43,7 +52,6 @@ App.controller.define('CMain', {
 
         var JOBS=App.get('VDemandeRepro uploadfilemanager').getFiles();
         this.doJobs(JOBS,0,function(){
-            
             App.DB.post('formulaires://demandes',{
                 Name: Auth.User.firstname+' '+Auth.User.lastname,
                 UserID: Auth.User.uid,
@@ -55,10 +63,8 @@ App.controller.define('CMain', {
             },function(e,r){
                 App.notify('Votre demande a bien été enregistrée');
                 me.up('window').close();
-            });            
-            
+            });             
         });
-        
     },
     demanderepro_onclick: function(me)
     {
