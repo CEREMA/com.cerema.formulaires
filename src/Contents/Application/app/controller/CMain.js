@@ -45,6 +45,7 @@ App.controller.define('CMain', {
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
+			console.log(me.status*1);
 			if (me.status*1>1) {
 				App.get(me,'button#btnOK').hide();
 				App.get(me,'uploadfilemanager').setReadOnly();
