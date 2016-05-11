@@ -116,6 +116,7 @@ App.controller.define('CMain', {
     OK_onclick: function(me)
     {
         var JOBS=App.get('VDemandeRepro uploadfilemanager').getFiles();
+		if (JOBS.length>0) {
         this.doJobs(JOBS,0,function(){
             App.DB.post('formulaires://demandes',{
                 Name: Auth.User.firstname+' '+Auth.User.lastname,
@@ -131,6 +132,21 @@ App.controller.define('CMain', {
 				me.up('window').close();
             });             
         });
+		} else {
+            App.DB.post('formulaires://demandes',{
+                Name: Auth.User.firstname+' '+Auth.User.lastname,
+                UserID: Auth.User.uid,
+                subject: App.get('textfield#objet').getValue(),
+                object: App.get('htmleditor#demande').getValue(),
+                Date1: new Date(),
+                status: 1,
+                files: "[]"
+            },function(e,r){
+                App.notify('Votre demande a bien été enregistrée');
+				App.get('mainform grid').getStore().load();
+				me.up('window').close();
+            });             			
+		}
     },
     demanderepro_onclick: function(me)
     {
