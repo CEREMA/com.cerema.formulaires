@@ -11,6 +11,13 @@ App.view.define('VDemandeRepro', {
             {
                 xtype: "textfield",
                 itemId: "objet",
+                width: "100%",
+                padding: 5
+            },
+            {
+                xtype: "htmleditor",
+                itemId: "demande",
+                height: 250,
                 width: "100%"
             }
         ];
