@@ -37,8 +37,9 @@ App.controller.define('CMain', {
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
+			if (me.status>1) App.get(me,'button#OK').hide();
 			if (me.status==1) {
-				if (Auth.User.profiles.indexOf('SUPERUSER')>-1) {
+				if (Auth.User.profiles.indexOf('REPRO')>-1) {
 					App.DB.post('formulaires://demandes',{
 						id: me.ItemID,
 						status: 2,
@@ -88,17 +89,17 @@ App.controller.define('CMain', {
 	onLoad: function()
 	{
 	   Auth.login(function(){
-        if (Auth.User.profiles.indexOf('SUPERUSER')>-1) {
-            App.get('mainform grid').columns[0].show();
-            var store=App.store.create("formulaires://demandes");
-            App.get('mainform grid').bindStore(store);
-            App.get('mainform grid').store.load();
-        } else {
-            var store=App.store.create("formulaires://demandes?UserID="+Auth.User.uid);
-            App.get('mainform grid').bindStore(store);
-            App.get('mainform grid').store.load();                        
-        };
-           
+			if (Auth.User.profiles.indexOf('REPRO')>-1) {
+				App.get('mainform grid').columns[0].show();
+				var store=App.store.create("formulaires://demandes");
+				App.get('mainform grid').bindStore(store);
+				App.get('mainform grid').store.load();
+			};
+			if (Auth.User.profiles.length==0) {
+				var store=App.store.create("formulaires://demandes?UserID="+Auth.User.uid);
+				App.get('mainform grid').bindStore(store);
+				App.get('mainform grid').store.load();                        
+			};           
        });
 	}
 	
