@@ -14,6 +14,7 @@ App.view.define('VDemandeRepro', {
                 width: "100%",
                 padding: 5,
                 fieldLabel: "Sujet",
+				bind: "subject",
                 labelAlign: 'top'
             },
             {
@@ -22,6 +23,7 @@ App.view.define('VDemandeRepro', {
                 height: 250,
                 width: "100%",
                 padding: 5,
+				bind: "object",
                 fieldLabel: "Description du travail demandé",
                 labelAlign: 'top'
             },
