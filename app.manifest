@@ -59,7 +59,10 @@
     "api": [
         "MyService"
     ],
-    "db": [],
+    "db": [
+        "bpclight",
+        "formulaires"
+    ],
     "packages": [],
     "icon": {
         "background": "#FFFFFF",
