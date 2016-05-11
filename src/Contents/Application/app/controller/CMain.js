@@ -64,8 +64,8 @@ App.controller.define('CMain', {
 				status: 3,
 				Date3: new Date()
 			},function(e,r){
-				me.up('window').close();
 				App.get('mainform grid').getStore().load();
+				me.up('window').close();
 			});
 			me.status=3;
 		};		
@@ -80,10 +80,10 @@ App.controller.define('CMain', {
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
-				App.get(me,'button#btnOK').hide();
-				App.get(me,'uploadfilemanager').setReadOnly(true);
-				App.get(me,'textfield#objet').setReadOnly(true);
-				App.get(me,'htmleditor#demande').setReadOnly(true);
+			App.get(me,'button#btnOK').hide();
+			App.get(me,'uploadfilemanager').setReadOnly(true);
+			App.get(me,'textfield#objet').setReadOnly(true);
+			App.get(me,'htmleditor#demande').setReadOnly(true);
 			App.DB.get('formulaires://demandes?id='+me.ItemID,me,function(response){
 				App.get(me,"uploadfilemanager").setFiles(JSON.parse(response.data[0].files));
 			});
@@ -94,8 +94,8 @@ App.controller.define('CMain', {
 						status: 2,
 						Date2: new Date()
 					},function(e,r){
-						me.up('window').close();
 						App.get('mainform grid').getStore().load();
+						me.up('window').close();
 					});
 					me.status=2;
 					App.get(me,'button#closeme').show();
