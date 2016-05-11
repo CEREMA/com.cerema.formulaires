@@ -20,7 +20,7 @@ App = {
 				} else {
 					var b64=App.upload.toBase64(ff);
 					var buf=new Buffer(b64.split(';base64,')[1], 'base64');
-					res.set('Content-disposition', 'inline; filename="Doc.pdf"');
+					res.set('Content-disposition', 'inline; filename="'+response.filename+'"');
 					res.set("Content-Type", b64.split(';base64')[0].split('data:')[1]);
 					res.end(buf);
 				}
