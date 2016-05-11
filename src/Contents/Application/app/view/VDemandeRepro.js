@@ -10,14 +10,24 @@ App.view.define('VDemandeRepro', {
         this.items = [
             {
                 xtype: "textfield",
-                itemId: "objet"
+                itemId: "objet",
+                width: "100%"
             },
             {
                 xtype: "htmlarea",
-                itemId: "demande"
+                itemId: "demande",
+                height: 250,
+                width: "100%"
             },
             {
-                xtype: ""
+                xtype: "uploadfilemanager",
+                padding: 10,
+                itemId: "up",
+                flex: 1,
+                height: 120,
+                width: "100%",
+                /*uploader: '/upload',*/
+                hidden: false
             }
         ];
         this.bbar = [
