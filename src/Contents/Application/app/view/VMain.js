@@ -68,7 +68,12 @@ App.view.define('VMain', {
                     {
                         header: "Statut",
                         dataIndex: "status",
-                        width: 120
+                        width: 120,
+                        renderer: function(value) {
+                            if (value==1) return '<div style="color:red">Déposé</div>';
+                            if (value==2) return '<div style="color:orange">En cours de traitement</div>';
+                            if (value==3) return '<div style="color:red">Traité.</div>';
+                        }
                     }],
                     border: false,
                     store: App.store.create("formulaires://demandes",{autoLoad: true})
