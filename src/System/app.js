@@ -5,7 +5,7 @@ App = {
 			App.upload.up(req,res);
 		});
 		app.get('/docs/*',function(req,res) {
-			var ff=req.originalUrl;
+			var ff=req.originalUrl.split('/docs')[1];
 			console.log('select _blob from docs where docId="'+ff+'"');
 			App.using('db').query('dashboard','select _blob from docs where docId="'+ff+'"',function(err,response) {
 				if (response.length>0) {
