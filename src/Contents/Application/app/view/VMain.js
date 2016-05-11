@@ -45,9 +45,33 @@ App.view.define('VMain', {
 			items: [
 				{
 					xtype: "grid",
-					columns: [],
+					columns: [{
+                        header: "Sujet",
+                        dataIndex: "subject",
+                        flex: 1
+                    },
+                    {
+                        header: "Dépôt",
+                        dataIndex: "Date1",
+                        width: 120
+                    }, 
+                    {
+                        header: "En cours",
+                        dataIndex: "Date2"  ,
+                        width: 120
+                    },
+                    {
+                        header: "Traité",
+                        dataIndex: "Date3"  ,
+                        width: 120
+                    },
+                    {
+                        header: "Statut",
+                        dataIndex: "status",
+                        width: 120
+                    }],
                     border: false,
-                    store: App.store.create({fields:[],data:[]})
+                    store: App.store.create("formulaires://demandes",{autoLoad: true})
 				}
 			]
 		}
