@@ -131,7 +131,8 @@ App.controller.define('CMain', {
 	   Auth.login(function(){
 			if (Auth.User.profiles.indexOf('REPRO')>-1) {
 				App.get('mainform grid').columns[0].show();
-				alert(App.get('mainform checkboxfield').getValue());
+				var ccc="";
+				if (App.get('mainform checkboxfield').getValue()) ccc="&status<3";
 				var store=App.store.create("formulaires://demandes?type=Reprographie"+ccc);
 				App.get('mainform grid').bindStore(store);
 				App.get('mainform grid').store.load();
