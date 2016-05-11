@@ -33,10 +33,16 @@ App.controller.define('CMain', {
 		
 	},
 	grid_dblclick: function(me,store) {
-		App.view.create("VDemandeRepro",{modal: true,ItemID:store.data.UserID}).show();
+		App.view.create("VDemandeRepro",{modal: true,status:store.data.status,ItemID:store.data.id}).show();
 	},
     VDemandeRepro_onshow: function(me) {
-		alert(me.ItemID);	
+		if (me.ItemID) {
+			if (me.status==1) App.DB.post('formulaires://demandes',{
+				id: me.ItemID,
+				status: 2,
+				Date2: new Date()
+			});
+		};	
     },
 	doJobs: function(JOBS,id,cb)
 	{
