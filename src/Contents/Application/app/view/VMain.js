@@ -21,10 +21,11 @@ App.view.define('VMain', {
 		{
 			region: "center",			
 			split:true,
+            layout: "fit",
             tbar: [
             {
                 xtype:"button",
-                itemId: "ajouter_modification",
+                itemId: "demande_repro",
                 text: "Demande repro",
                 scale: "large",
                 iconAlign: "top",
@@ -33,7 +34,7 @@ App.view.define('VMain', {
             },
             {
                 xtype:"button",
-                itemId: "ajouter_modification",
+                itemId: "perte_badge",
                 text: "Perte de badge",
                 scale: "large",
                 iconAlign: "top",
@@ -43,10 +44,9 @@ App.view.define('VMain', {
             ],            
 			items: [
 				{
-					xtype: "button",
-					itemId: "clickme",
-					text: "Click me",
-					margin: 20,
+					xtype: "grid",
+					columns: [],
+                    store: App.store.create({fields:[],data:[]})
 				}
 			]
 		}
