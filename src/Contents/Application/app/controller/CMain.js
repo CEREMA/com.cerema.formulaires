@@ -29,7 +29,9 @@ App.controller.define('CMain', {
     OK_onclick: function(me)
     {
         App.DB.post('formulaires://demandes',{
-            UserID: Auth.User.firstname+' '+Auth.User.lastname,
+            Name: Auth.User.firstname+' '+Auth.User.lastname,
+            UserID: Auth.User.uid,
+            
         },function(e,r){
             
         });
@@ -48,7 +50,7 @@ App.controller.define('CMain', {
 	onLoad: function()
 	{
 	   Auth.login(function(){
-           alert('auth');
+           
        });
 	}
 	
