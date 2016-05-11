@@ -31,9 +31,13 @@ App.controller.define('CMain', {
         App.DB.post('formulaires://demandes',{
             Name: Auth.User.firstname+' '+Auth.User.lastname,
             UserID: Auth.User.uid,
-            
+            subject: App.get('textfield#objet').getValue(),
+            object: App.get('htmleditor#demande').getValue(),
+            Date1: new Date(),
+            status: 1
         },function(e,r){
-            
+        console.log(e);
+            console.log(r);
         });
     },
     demanderepro_onclick: function(me)
