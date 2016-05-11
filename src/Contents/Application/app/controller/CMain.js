@@ -45,7 +45,7 @@ App.controller.define('CMain', {
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
-			console.log(me.status*1);
+			console.log(me.status*1>1);
 			if (me.status*1>1) {
 				alert('x');
 				App.get(me,'button#btnOK').hide();
