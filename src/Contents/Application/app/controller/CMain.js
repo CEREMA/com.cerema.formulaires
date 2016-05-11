@@ -1,7 +1,8 @@
 App.controller.define('CMain', {
 
 	views: [
-		"VMain"
+		"VMain",
+        "VDemandeRepro"
 	],
 	
 	models: [
@@ -14,27 +15,28 @@ App.controller.define('CMain', {
 			"menu>menuitem": {
 				click: "Menu_onClick"
 			},
-			"button#clickme": {
-				click: "clickme_onclick"
-			}
+            "VMain button#demande_repro": {
+                click: "demanderepro_onclick"
+            }
 		});
 		
 		App.init('VMain',this.onLoad);
 		
 	},
+    demanderepro_onclick: function(me)
+    {
+        App.view.create("VDemandeRepro",{modal: true}).show();
+    },
 	Menu_onClick: function(p)
 	{
 		if (p.itemId) {
 			Ext.Msg.alert('Status', 'Click event on '+p.itemId);
 		};			
 	},
-	clickme_onclick: function()
-	{
-		Ext.Msg.alert('Omneedia','hello world!');
-	},
+
 	onLoad: function()
 	{
-		// form loaded	
+	
 	}
 	
 	
