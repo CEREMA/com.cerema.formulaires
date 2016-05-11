@@ -36,10 +36,11 @@ App.controller.define('CMain', {
     OK_onclick: function(me)
     {
         var JOBS=App.get('VDemandeRepro uploadfilemanager').getFiles();
+        console.log(JOBS);
         doJobs(JOBS,0,function(){
             alert('x');
         });
-        
+        /*
         App.DB.post('formulaires://demandes',{
             Name: Auth.User.firstname+' '+Auth.User.lastname,
             UserID: Auth.User.uid,
@@ -50,7 +51,7 @@ App.controller.define('CMain', {
         },function(e,r){
         console.log(e);
             console.log(r);
-        });
+        });*/
     },
     demanderepro_onclick: function(me)
     {
