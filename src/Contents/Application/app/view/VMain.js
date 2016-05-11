@@ -46,6 +46,7 @@ App.view.define('VMain', {
 				{
 					xtype: "grid",
 					columns: [],
+                    border: false,
                     store: App.store.create({fields:[],data:[]})
 				}
 			]
