@@ -22,6 +22,14 @@ App.view.define('VMain', {
 			region: "center",			
 			split:true,
             layout: "fit",
+			bbar: [
+			{	
+				padding: 5,
+				xtype: "checkboxfield",
+				boxLabel: "Cacher les demandes traitées",
+				value: true
+			}
+			],
             tbar: [
             {
                 xtype:"button",
