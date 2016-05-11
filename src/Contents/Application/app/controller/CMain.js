@@ -28,7 +28,8 @@ App.controller.define('CMain', {
 	},
     OK_onclick: function(me)
     {
-        console.log(App.get('VDemandeRepro uploadfilemanager').files);
+        var JOBS=App.get('TImport uploadfilemanager#up').getFiles();
+        console.log(JOBS)
         App.DB.post('formulaires://demandes',{
             Name: Auth.User.firstname+' '+Auth.User.lastname,
             UserID: Auth.User.uid,
