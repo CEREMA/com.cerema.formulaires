@@ -44,6 +44,9 @@ App.controller.define('CMain', {
 				id: me.up('window').ItemID,
 				status: 3,
 				Date3: new Date()
+			},function(e,r){
+				me.up('window').close();
+				App.get('mainform grid').getStore().load();
 			});
 			me.status=3;
 		};		
@@ -73,6 +76,9 @@ App.controller.define('CMain', {
 						id: me.ItemID,
 						status: 2,
 						Date2: new Date()
+					},function(e,r){
+						me.up('window').close();
+						App.get('mainform grid').getStore().load();
 					});
 					me.status=2;
 					App.get(me,'button#closeme').show();
@@ -104,7 +110,8 @@ App.controller.define('CMain', {
                 files: JSON.stringify(JOBS)
             },function(e,r){
                 App.notify('Votre demande a bien été enregistrée');
-                me.up('window').close();
+				App.get('mainform grid').getStore().load();
+				me.up('window').close();
             });             
         });
     },
