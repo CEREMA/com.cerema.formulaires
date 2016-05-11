@@ -49,7 +49,8 @@ App.view.define('VMain', {
                     {
                         header: "Agent",
                         dataIndex: "Name"  ,
-                        width: 250
+                        width: 250,
+                        hidden: true
                     },                        
                     {
                         header: "Demandes",
