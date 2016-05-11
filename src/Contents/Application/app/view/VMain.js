@@ -29,7 +29,7 @@ App.view.define('VMain', {
                 text: "Demande repro",
                 scale: "large",
                 iconAlign: "top",
-                iconCls: "add",
+                iconCls: "Print",
                 hidden: false
             },
             {
