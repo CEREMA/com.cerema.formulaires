@@ -76,8 +76,10 @@ App.controller.define('CMain', {
 	   Auth.login(function(){
         console.log(Auth.User.profiles);
         if (Auth.User.profiles.indexOf('SUPERUSER')>-1) {
-            alert('x');
             App.get('mainform grid').columns[0].show();
+            var store=App.store.create("formulaires://demandes");
+            App.get('mainform grid').bindStore(store);
+            App.get('mainform grid').store.load();
         } else {
                         
         };
