@@ -37,7 +37,7 @@ App.controller.define('CMain', {
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
-			if (me.status>1) App.get(me,'button#OK').hide();
+			if (me.status>1) App.get(me,'button#btnOK').hide();
 			if (me.status==1) {
 				if (Auth.User.profiles.indexOf('REPRO')>-1) {
 					App.DB.post('formulaires://demandes',{
