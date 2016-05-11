@@ -39,6 +39,7 @@ App.controller.define('CMain', {
 		if (me.ItemID) {
 			if (me.status*1>1) App.get(me,'button#btnOK').hide();
 			App.DB.get('formulaires://demandes?id='+me.ItemID,me,function(response){
+				alert(response.files)
 				App.get(me,"uploadfilemanager").setFiles(response.files);
 			});
 			
