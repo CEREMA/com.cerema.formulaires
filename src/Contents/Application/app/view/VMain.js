@@ -53,19 +53,19 @@ App.view.define('VMain', {
                     {
                         header: "Dépôt",
                         dataIndex: "Date1",
-                        renderer:  Ext.util.Format.dateRenderer('d/m/Y - G:i:s.u')
+                        renderer:  Ext.util.Format.dateRenderer('d/m/Y - G:i:s.u'),
                         width: 120
                     }, 
                     {
                         header: "En cours",
                         dataIndex: "Date2"  ,
-                        renderer:  Ext.util.Format.dateRenderer('d/m/Y - G:i:s.u')
+                        renderer:  Ext.util.Format.dateRenderer('d/m/Y - G:i:s.u'),
                         width: 120
                     },
                     {
                         header: "Traité",
                         dataIndex: "Date3"  ,
-                        renderer:  Ext.util.Format.dateRenderer('d/m/Y - G:i:s.u')
+                        renderer:  Ext.util.Format.dateRenderer('d/m/Y - G:i:s.u'),
                         width: 120
                     },
                     {
