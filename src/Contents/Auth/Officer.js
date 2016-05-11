@@ -13,7 +13,6 @@ Officer = {
 						mail: mail,
 						profiles: Officer.getProfile(mail.split('@')[0])
 					};
-					console.log(response);
 					cb(response);			
 				} else cb(err);
 			});

@@ -17,12 +17,23 @@ App.controller.define('CMain', {
 			},
             "mainform button#demande_repro": {
                 click: "demanderepro_onclick"
+            },
+            "VDemandeRepro button#OK": {
+                click: "OK_onclick"
             }
 		});
 		
 		App.init('VMain',this.onLoad);
 		
 	},
+    OK_onclick: function(me)
+    {
+        App.DB.post('formulaires://demandes',{
+            UserID: Auth.User.firstName+' '+Auth.User.lastName,
+        },function(e,r){
+            
+        });
+    },
     demanderepro_onclick: function(me)
     {
         App.view.create("VDemandeRepro",{modal: true}).show();
