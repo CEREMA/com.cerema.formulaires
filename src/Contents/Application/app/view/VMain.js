@@ -46,7 +46,7 @@ App.view.define('VMain', {
 				{
 					xtype: "grid",
 					columns: [{
-                        header: "Sujet",
+                        header: "Demandes",
                         dataIndex: "subject",
                         flex: 1
                     },
