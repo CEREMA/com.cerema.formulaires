@@ -63,6 +63,9 @@ App.controller.define('CMain', {
 					me.status=2;
 					App.get(me,'button#closeme').show();
 				};
+			};
+			if (me.status*1==2) {
+				App.get(me,'button#closeme').show();
 			}
 		};	
     },
