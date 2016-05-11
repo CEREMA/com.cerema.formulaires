@@ -51,7 +51,10 @@
     "controllers": [
         "CMain"
     ],
-    "modules": [],
+    "modules": [
+        "Ext.ux.form.field.BoxSelect",
+        "Ext.ux.upload"
+    ],
     "plugins": [],
     "api": [
         "MyService"
