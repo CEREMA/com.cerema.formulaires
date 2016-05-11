@@ -35,23 +35,24 @@ App.controller.define('CMain', {
 	},    
     OK_onclick: function(me)
     {
+
         var JOBS=App.get('VDemandeRepro uploadfilemanager').getFiles();
-        console.log(JOBS);
         this.doJobs(JOBS,0,function(){
-            alert('x');
+            
+            App.DB.post('formulaires://demandes',{
+                Name: Auth.User.firstname+' '+Auth.User.lastname,
+                UserID: Auth.User.uid,
+                subject: App.get('textfield#objet').getValue(),
+                object: App.get('htmleditor#demande').getValue(),
+                Date1: new Date(),
+                status: 1
+            },function(e,r){
+                App.notify('Votre demande a bien été enregistrée');
+                me.up('window').close();
+            });            
+            
         });
-        /*
-        App.DB.post('formulaires://demandes',{
-            Name: Auth.User.firstname+' '+Auth.User.lastname,
-            UserID: Auth.User.uid,
-            subject: App.get('textfield#objet').getValue(),
-            object: App.get('htmleditor#demande').getValue(),
-            Date1: new Date(),
-            status: 1
-        },function(e,r){
-        console.log(e);
-            console.log(r);
-        });*/
+        
     },
     demanderepro_onclick: function(me)
     {
