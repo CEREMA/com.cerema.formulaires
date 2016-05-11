@@ -31,6 +31,7 @@ App.controller.define('CMain', {
 	},
     VDemandeRepro_onshow: function(me) {
         if (Auth.User.profiles.indexOf('SUPERUSER')>-1) {
+            alert('x');
             App.get('mainform grid').columns[0].show();
         } else {
                         
