@@ -26,10 +26,20 @@ App.controller.define('CMain', {
 		App.init('VMain',this.onLoad);
 		
 	},
+	doJobs: function(JOBS,id,cb)
+	{
+		var _p=this;
+		App.MyService.import(JOBS[id],function() {
+			if (JOBS[id+1]) _p.doJobs(JOBS,id+1,cb); else cb();
+		});
+	},    
     OK_onclick: function(me)
     {
         var JOBS=App.get('VDemandeRepro uploadfilemanager').getFiles();
-        console.log(JOBS)
+        doJobs(JOBS,0,function(){
+            alert('x');
+        });
+        
         App.DB.post('formulaires://demandes',{
             Name: Auth.User.firstname+' '+Auth.User.lastname,
             UserID: Auth.User.uid,
