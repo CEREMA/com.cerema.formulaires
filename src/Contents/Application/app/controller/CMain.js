@@ -45,7 +45,10 @@ App.controller.define('CMain', {
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
-			if (me.status*1>1) App.get(me,'button#btnOK').hide();
+			if (me.status*1>1) {
+				App.get(me,'button#btnOK').hide();
+				App.get(me,'uploadfilemanager').setReadOnly();
+			};
 			App.DB.get('formulaires://demandes?id='+me.ItemID,me,function(response){
 				App.get(me,"uploadfilemanager").setFiles(JSON.parse(response.data[0].files));
 			});
