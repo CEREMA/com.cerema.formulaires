@@ -29,7 +29,7 @@ App.controller.define('CMain', {
     OK_onclick: function(me)
     {
         App.DB.post('formulaires://demandes',{
-            UserID: Auth.User.firstName+' '+Auth.User.lastName,
+            UserID: Auth.User.firstname+' '+Auth.User.lastname,
         },function(e,r){
             
         });
