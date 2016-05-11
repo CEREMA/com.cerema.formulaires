@@ -91,7 +91,7 @@ App.controller.define('CMain', {
 	   Auth.login(function(){
 			if (Auth.User.profiles.indexOf('REPRO')>-1) {
 				App.get('mainform grid').columns[0].show();
-				var store=App.store.create("formulaires://demandes");
+				var store=App.store.create("formulaires://demandes?type=Reprographie");
 				App.get('mainform grid').bindStore(store);
 				App.get('mainform grid').store.load();
 			};
