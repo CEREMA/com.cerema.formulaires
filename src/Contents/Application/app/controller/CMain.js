@@ -49,6 +49,7 @@ App.controller.define('CMain', {
 				App.get(me,'button#btnOK').hide();
 				App.get(me,'uploadfilemanager').setReadOnly(true);
 				App.get(me,'textfield#objet').setReadOnly(true);
+				App.get(me,'htmleditor#demande').setReadOnly(true);
 			};
 			App.DB.get('formulaires://demandes?id='+me.ItemID,me,function(response){
 				App.get(me,"uploadfilemanager").setFiles(JSON.parse(response.data[0].files));
