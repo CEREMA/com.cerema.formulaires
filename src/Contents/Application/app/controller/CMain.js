@@ -95,7 +95,6 @@ App.controller.define('CMain', {
 						Date2: new Date()
 					},function(e,r){
 						App.get('mainform grid').getStore().load();
-						me.up('window').close();
 					});
 					me.status=2;
 					App.get(me,'button#closeme').show();
