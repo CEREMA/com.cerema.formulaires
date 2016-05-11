@@ -30,10 +30,23 @@ App.controller.define('CMain', {
 			"VDemandeRepro uploadfilemanager": {
 				itemdblclick: "up_onclick"
 			},
+			"VDemandeRepro button#closeme": {
+				click: "closeme_onclick"
+			}			
 		});
 		
 		App.init('VMain',this.onLoad);
 		
+	},
+	closeme_onclick: function(me) {
+		if (Auth.User.profiles.indexOf('REPRO')>-1) {
+			App.DB.post('formulaires://demandes',{
+				id: me.ItemID,
+				status: 3,
+				Date3: new Date()
+			});
+			me.status=3;
+		};		
 	},
 	up_onclick: function(p, record) {
 		var iframe=document.createElement('iframe');
