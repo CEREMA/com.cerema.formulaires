@@ -54,7 +54,6 @@ App.controller.define('CMain', {
 			App.DB.get('formulaires://demandes?id='+me.ItemID,me,function(response){
 				App.get(me,"uploadfilemanager").setFiles(JSON.parse(response.data[0].files));
 			});
-			
 			if (me.status*1==1) {
 				if (Auth.User.profiles.indexOf('REPRO')>-1) {
 					App.DB.post('formulaires://demandes',{
