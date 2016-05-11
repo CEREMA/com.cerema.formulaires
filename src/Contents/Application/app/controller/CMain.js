@@ -21,6 +21,25 @@ App.controller.define('CMain', {
 			"mainform grid": {
 				itemdblclick: "grid_dblclick"	
 			},
+			"mainform checkboxfield": {
+				change: function (checkbox, newVal, oldVal) {
+					if (Auth.User.profiles.indexOf('REPRO')>-1) {
+						App.get('mainform grid').columns[0].show();
+						var ccc="";
+						if (App.get('mainform checkboxfield').getValue()) ccc="&status<3";
+						var store=App.store.create("formulaires://demandes?type=Reprographie"+ccc);
+						App.get('mainform grid').bindStore(store);
+						App.get('mainform grid').store.load();
+					};
+					if (Auth.User.profiles.length==0) {
+						var ccc="";
+						if (App.get('mainform checkboxfield').getValue()) ccc="&status<3";
+						var store=App.store.create("formulaires://demandes?UserID="+Auth.User.uid+ccc);
+						App.get('mainform grid').bindStore(store);
+						App.get('mainform grid').store.load();                        
+					};                 
+				}	
+			},
             "VDemandeRepro": {
                 show: "VDemandeRepro_onshow"
             },
