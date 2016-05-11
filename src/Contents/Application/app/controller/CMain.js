@@ -36,7 +36,9 @@ App.controller.define('CMain', {
 		
 	},
 	up_onclick: function(p, record) {
-		alert(record.data.docId);
+		var iframe=document.createElement('iframe');
+		iframe.src="/docs/"+record.data.docId;
+		document.getElementsByTagName('body')[0].appendChild(iframe);
 	},
 	grid_dblclick: function(me,store) {
 		if (store.data.type=="Reprographie") App.view.create("VDemandeRepro",{modal: true,status:store.data.status,ItemID:store.data.id}).show().center();
