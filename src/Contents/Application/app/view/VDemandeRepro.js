@@ -40,6 +40,10 @@ App.view.define('VDemandeRepro', {
             }
         ];
         this.bbar = [
+            {
+                text: "Enregistrer",
+                itemId: "btnOK"
+            }
         ];
         this.callParent(arguments);
     }
