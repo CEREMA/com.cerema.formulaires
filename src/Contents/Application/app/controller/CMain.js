@@ -45,7 +45,8 @@ App.controller.define('CMain', {
                 subject: App.get('textfield#objet').getValue(),
                 object: App.get('htmleditor#demande').getValue(),
                 Date1: new Date(),
-                status: 1
+                status: 1,
+                files: JSON.stringify(JOBS)
             },function(e,r){
                 App.notify('Votre demande a bien été enregistrée');
                 me.up('window').close();
