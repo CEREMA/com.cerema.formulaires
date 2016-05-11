@@ -95,7 +95,7 @@ App.view.define('VMain', {
                         renderer: function(value) {
                             if (value==1) return '<div style="color:red">Déposé</div>';
                             if (value==2) return '<div style="color:orange">En cours de traitement</div>';
-                            if (value==3) return '<div style="color:red">Traité.</div>';
+                            if (value==3) return '<div style="color:green">Traité.</div>';
                         }
                     }],
                     border: false,
