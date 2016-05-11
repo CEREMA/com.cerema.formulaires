@@ -46,6 +46,8 @@ App.controller.define('CMain', {
 						Date2: new Date()
 					});
 					me.status=2;
+				} else {
+					App.DB.get('formulaires://demandes?id='+me.ItemID,me);
 				}
 			}
 		};	
