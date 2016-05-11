@@ -12,12 +12,6 @@ App.view.define('VDemandeRepro', {
                 xtype: "textfield",
                 itemId: "objet",
                 width: "100%"
-            },
-            {
-                xtype: "htmlarea",
-                itemId: "demande",
-                height: 250,
-                width: "100%"
             }
         ];
         this.bbar = [
