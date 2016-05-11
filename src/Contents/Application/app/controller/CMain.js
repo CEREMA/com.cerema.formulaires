@@ -41,7 +41,7 @@ App.controller.define('CMain', {
 	closeme_onclick: function(me) {
 		if (Auth.User.profiles.indexOf('REPRO')>-1) {
 			App.DB.post('formulaires://demandes',{
-				id: me.ItemID,
+				id: me.up('window').ItemID,
 				status: 3,
 				Date3: new Date()
 			});
