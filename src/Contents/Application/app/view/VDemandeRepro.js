@@ -8,7 +8,17 @@ App.view.define('VDemandeRepro', {
         this.bodyCls = "white";
         this.layout="vbox";
         this.items = [
-            
+            {
+                xtype: "textfield",
+                itemId: "objet",
+                width: "100%"
+            },
+            {
+                xtype: "htmlarea",
+                itemId: "demande",
+                height: 250,
+                width: "100%"
+            }
         ];
         this.bbar = [
         ];
