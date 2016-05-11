@@ -26,14 +26,20 @@ App.controller.define('CMain', {
             },
             "VDemandeRepro button#btnOK": {
                 click: "OK_onclick"
-            }
+            },
+			"VDemandeRepro uploadfilemanager": {
+				itemdblclick: "up_onclick"
+			},
 		});
 		
 		App.init('VMain',this.onLoad);
 		
 	},
+	up_onclick: function(p, record) {
+		alert(record.data.docId);
+	},
 	grid_dblclick: function(me,store) {
-		if (store.data.type=="Reprographie") App.view.create("VDemandeRepro",{modal: true,status:store.data.status,ItemID:store.data.id}).show();
+		if (store.data.type=="Reprographie") App.view.create("VDemandeRepro",{modal: true,status:store.data.status,ItemID:store.data.id}).show().center();
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
