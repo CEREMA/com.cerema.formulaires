@@ -27,7 +27,7 @@ App.view.define('VMain', {
 				padding: 5,
 				xtype: "checkboxfield",
 				boxLabel: "Cacher les demandes traitées",
-				value: true
+				checked   : true
 			}
 			],
             tbar: [
