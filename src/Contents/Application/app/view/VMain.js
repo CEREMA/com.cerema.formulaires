@@ -21,23 +21,22 @@ App.view.define('VMain', {
 		{
 			region: "center",			
 			split:true,
+            tbar: [
+            {
+                xtype:"button",
+                itemId: "ajouter_modification",
+                text: "Ajouter",
+                scale: "large",
+                iconAlign: "top",
+                iconCls: "add",
+                hidden: false
+            },            
 			items: [
 				{
 					xtype: "button",
 					itemId: "clickme",
 					text: "Click me",
 					margin: 20,
-            		tbar: [
-                    {
-                        xtype:"button",
-                        itemId: "ajouter_modification",
-                        text: "Ajouter",
-                        scale: "large",
-                        iconAlign: "top",
-                        iconCls: "add",
-                        hidden: true
-                    }
-		          ]
 				}
 			]
 		}
