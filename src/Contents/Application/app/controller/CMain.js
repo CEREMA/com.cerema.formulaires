@@ -37,11 +37,14 @@ App.controller.define('CMain', {
 	},
     VDemandeRepro_onshow: function(me) {
 		if (me.ItemID) {
-			if (me.status==1) App.DB.post('formulaires://demandes',{
-				id: me.ItemID,
-				status: 2,
-				Date2: new Date()
-			});
+			if (me.status==1) {
+				App.DB.post('formulaires://demandes',{
+					id: me.ItemID,
+					status: 2,
+					Date2: new Date()
+				});
+				me.status=2;
+			}
 		};	
     },
 	doJobs: function(JOBS,id,cb)
