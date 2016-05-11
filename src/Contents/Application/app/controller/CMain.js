@@ -47,6 +47,7 @@ App.controller.define('CMain', {
 		if (me.ItemID) {
 			console.log(me.status*1);
 			if (me.status*1>1) {
+				alert('x');
 				App.get(me,'button#btnOK').hide();
 				App.get(me,'uploadfilemanager').setReadOnly();
 			};
