@@ -36,7 +36,7 @@ App.controller.define('CMain', {
 		App.view.create("VDemandeRepro",{modal: true,ItemID:store.data.UserID}).show();
 	},
     VDemandeRepro_onshow: function(me) {
-		
+		alert(me.ItemID);	
     },
 	doJobs: function(JOBS,id,cb)
 	{
