@@ -138,7 +138,9 @@ App.controller.define('CMain', {
 				App.get('mainform grid').store.load();
 			};
 			if (Auth.User.profiles.length==0) {
-				var store=App.store.create("formulaires://demandes?UserID="+Auth.User.uid);
+				var ccc="";
+				if (App.get('mainform checkboxfield').getValue()) ccc="&status<3";
+				var store=App.store.create("formulaires://demandes?UserID="+Auth.User.uid+ccc);
 				App.get('mainform grid').bindStore(store);
 				App.get('mainform grid').store.load();                        
 			};           
