@@ -101,7 +101,7 @@ App.controller.define('CMain', {
 				};
 			};
 			if (me.status*1==2) {
-				App.get(me,'button#closeme').show();
+				if (Auth.User.profiles.indexOf('REPRO')>-1) App.get(me,'button#closeme').show();
 			}
 		};	
     },
