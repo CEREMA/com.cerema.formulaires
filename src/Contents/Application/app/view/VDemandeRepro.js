@@ -8,27 +8,7 @@ App.view.define('VDemandeRepro', {
         this.bodyCls = "white";
         this.layout="vbox";
         this.items = [
-            {
-                xtype: "textfield",
-                itemId: "objet",
-                width: "100%"
-            },
-            {
-                xtype: "htmlarea",
-                itemId: "demande",
-                height: 250,
-                width: "100%"
-            },
-            {
-                xtype: "uploadfilemanager",
-                padding: 10,
-                itemId: "up",
-                flex: 1,
-                height: 120,
-                width: "100%",
-                uploader: '/upload',
-                hidden: false
-            }
+            
         ];
         this.bbar = [
         ];
