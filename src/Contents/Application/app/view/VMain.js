@@ -47,7 +47,7 @@ App.view.define('VMain', {
                 scale: "large",
                 iconAlign: "top",
                 iconCls: "add",
-                hidden: false
+                hidden: true
             }
             ],            
 			items: [
