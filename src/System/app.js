@@ -6,26 +6,16 @@ App = {
 		});
 		app.get('/docs/*',function(req,res) {
 			var ff=req.originalUrl.split('/docs/')[1];
-			console.log('select _blob from docs where docId="'+ff+'"');
 			App.using('db').query('formulaires','select * from docs where docId="'+ff+'"',function(err,response) {
 				if (response.length>0) {
 					if (response[0]._blob=="") {
 						res.end('Aucun document lié.');
 					} else {
-						var buf = new Buffer(response[0]._blob.split(';base64,')[1], 'base64');
-						res.set('Content-disposition', 'inline; filename="'+response[0].filename+'"');
-						res.set("Content-Type", response[0]._blob.split(';base64')[0].split('data:')[1]);
-						res.end(buf);
+                        App.file.reader(response[0],res);
 					}
-				} else {
-					var b64=App.upload.toBase64(ff);
-					var buf=new Buffer(b64.split(';base64,')[1], 'base64');
-					res.set('Content-disposition', 'inline; filename="'+response[0].filename+'"');
-					res.set("Content-Type", b64.split(';base64')[0].split('data:')[1]);
-					res.end(buf);
-				}
-			});
-		});			
+				} else App.upload.reader(ff,res);
+            });
+        });					
 	}
 };
 
